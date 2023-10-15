@@ -128,9 +128,9 @@ export class TIOBrokerAdapter implements IHomeKitBridgeBindingFactory {
 
     private handleUnload(callback) {
         try {
-            this.adapter.log.info('cleaning up ...');
+            this.adapter.log.info('mei-debug cleaning up ...');
             deinitHAP();
-            this.adapter.log.info('cleaned up ...');
+            this.adapter.log.info('mei-debug cleaned up ...');
             callback();
         } catch (e) {
             callback();

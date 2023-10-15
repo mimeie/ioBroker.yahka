@@ -48,7 +48,7 @@ export abstract class TYahkaFunctionBase implements ISubscriptionRequestor {
     subscriptionEvent(stateName: string, ioState: ioBroker.State, callback: IInOutChangeNotify) {
         this.log.info(`mei-debug change event from ioBroker via [${stateName}]${JSON.stringify(ioState)}`);
         if (this.shouldStateBeFiltered(stateName, ioState)) {
-            this.log.debug('mei-debug state was filtered - notification is canceled');
+            this.log.info('mei-debug state was filtered - notification is canceled');
             return;
         }
 
