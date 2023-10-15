@@ -33,7 +33,7 @@ export class TIoBrokerInOutFunction_Homematic_Dimmer_Base extends TIoBrokerInOut
 
     protected cacheChanged(stateName: string, callback: IInOutChangeNotify) {
 
-        this.log.info(`cacheChanged [${stateName}]`);
+        this.log.info(`mei-debug cacheChanged [${stateName}]`);
 
         //const newValue = plainIoValue;
         //this.log.info(`cacheChanged [${stateName}]: ${JSON.stringify(newValue)}`);
@@ -53,7 +53,9 @@ export class TIoBrokerInOutFunction_Homematic_Dimmer_Base extends TIoBrokerInOut
 
 export class TIoBrokerInOutFunction_Homematic_Dimmer_On extends TIoBrokerInOutFunction_Homematic_Dimmer_Base {
     static create(adapter: ioBroker.Adapter, parameters: any): IInOutFunction {
+
         let params = TIoBrokerInOutFunction_Homematic_Dimmer_On.parseParameters(parameters);
+
         if (params === undefined) {
             return undefined
         }

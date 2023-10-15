@@ -46,15 +46,15 @@ export abstract class TYahkaFunctionBase implements ISubscriptionRequestor {
         return needUpdate;
     }
     subscriptionEvent(stateName: string, ioState: ioBroker.State, callback: IInOutChangeNotify) {
-        this.log.debug(`change event from ioBroker via [${stateName}]${JSON.stringify(ioState)}`);
+        this.log.info(`mei-debug change event from ioBroker via [${stateName}]${JSON.stringify(ioState)}`);
         if (this.shouldStateBeFiltered(stateName, ioState)) {
-            this.log.debug('state was filtered - notification is canceled');
+            this.log.debug('mei-debug state was filtered - notification is canceled');
             return;
         }
 
         let cacheChange = this.updateCache(stateName, ioState);
         if (!cacheChange) {
-            this.log.debug('state value already in cache - notification is canceled');
+            this.log.info('mei-debug state value already in cache - notification is canceled');
             return;
         }
 
