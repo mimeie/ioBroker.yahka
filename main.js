@@ -1107,7 +1107,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./main.ts":
 /*!*****************!*\
@@ -1174,7 +1174,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./shared/yahka.logger.ts":
 /*!********************************!*\
@@ -1208,7 +1208,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./shared/yahka.utils.ts":
 /*!*******************************!*\
@@ -1227,7 +1227,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.community.types.ts":
 /*!**********************************!*\
@@ -1269,7 +1269,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/conversion.base.ts":
 /*!********************************************!*\
@@ -1314,7 +1314,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/conversion.homekit.homematic.ts":
 /*!*********************************************************!*\
@@ -1423,7 +1423,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/conversion.inverse.ts":
 /*!***********************************************!*\
@@ -1462,7 +1462,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/conversion.invert.ts":
 /*!**********************************************!*\
@@ -1487,7 +1487,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/conversion.map.ts":
 /*!*******************************************!*\
@@ -1540,7 +1540,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/conversion.passthrough.ts":
 /*!***************************************************!*\
@@ -1565,7 +1565,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/conversion.round.ts":
 /*!*********************************************!*\
@@ -1592,7 +1592,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/conversion.scale.ts":
 /*!*********************************************!*\
@@ -1660,7 +1660,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/conversion.script.ts":
 /*!**********************************************!*\
@@ -1713,7 +1713,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/functions.base.ts":
 /*!*******************************************!*\
@@ -1786,7 +1786,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/functions.factory.ts":
 /*!**********************************************!*\
@@ -1815,7 +1815,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/functions.import.ts":
 /*!*********************************************!*\
@@ -1873,7 +1873,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/iofunc.base.ts":
 /*!****************************************!*\
@@ -1901,6 +1901,7 @@
                         this.updateIOBrokerValue(plainIoValue, callback);
                     }
                     cacheChanged(stateName, callback) {
+                        this.log.info(`mei-debug cacheChanged main.js webpack [${stateName}]`);
                         try {
                             this.valueForHomeKit = this.recalculateHomekitValues(stateName);
                             this.errorForHomeKit = null;
@@ -2001,7 +2002,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/iofunc.const.ts":
 /*!*****************************************!*\
@@ -2032,7 +2033,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/iofunc.homematic.covering.ts":
 /*!******************************************************!*\
@@ -2121,7 +2122,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/iofunc.homematic.dimmer.ts":
 /*!****************************************************!*\
@@ -2159,6 +2160,8 @@
                         this.addSubscriptionRequest(parameters.levelState);
                     }
                     cacheChanged(stateName, callback) {
+
+                        this.log.info(`mei-debug cacheChanged main.js [${stateName}]`);
                         // save level if we are switching off
                         if (stateName === this.parameters.levelState) {
                             const cacheValue = this.readValueFromCache(stateName);
@@ -2271,7 +2274,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/iofunc.multi-state.ts":
 /*!***********************************************!*\
@@ -2360,7 +2363,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.functions/iofunc.state.ts":
 /*!*****************************************!*\
@@ -2429,7 +2432,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.homekit-bridge.ts":
 /*!*********************************!*\
@@ -2463,7 +2466,7 @@
                                 var _a;
                                 let advertiser = this.config.useLegacyAdvertiser ? "bonjour-hap" /* MDNSAdvertiser.BONJOUR */ : "avahi" /* MDNSAdvertiser.AVAHI */;
                                 advertiser = this.config.useCiaoAdvertiser ? "ciao" /* MDNSAdvertiser.CIAO */ : advertiser;
-                                this.FLogger.info(`publishing bridge ${this.config.name} on ${(_a = this.config.interface) !== null && _a !== void 0 ? _a : '0.0.0.0'} using ${advertiser}`);
+                                this.FLogger.info(`mei-debug js publishing bridge ${this.config.name} on ${(_a = this.config.interface) !== null && _a !== void 0 ? _a : '0.0.0.0'} using ${advertiser}`);
                                 this.bridgeObject.publish({
                                     username: this.config.username,
                                     port: this.config.port,
@@ -2581,7 +2584,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.homekit-ipcamera.ts":
 /*!***********************************!*\
@@ -2913,7 +2916,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.homekit-service.ts":
 /*!**********************************!*\
@@ -3085,7 +3088,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "./yahka.ioBroker-adapter.ts":
 /*!***********************************!*\
@@ -3262,7 +3265,7 @@
 
 
                 /***/
-}),
+            }),
 
 /***/ "@iobroker/adapter-core":
 /*!*****************************************!*\
@@ -3274,7 +3277,7 @@
                 module.exports = require("@iobroker/adapter-core");
 
                 /***/
-}),
+            }),
 
 /***/ "debug":
 /*!************************!*\
@@ -3286,7 +3289,7 @@
                 module.exports = require("debug");
 
                 /***/
-}),
+            }),
 
 /***/ "hap-nodejs":
 /*!*****************************!*\
@@ -3298,7 +3301,7 @@
                 module.exports = require("hap-nodejs");
 
                 /***/
-}),
+            }),
 
 /***/ "util":
 /*!***********************!*\
@@ -3310,7 +3313,7 @@
                 module.exports = require("util");
 
                 /***/
-}),
+            }),
 
 /***/ "child_process":
 /*!********************************!*\
@@ -3322,7 +3325,7 @@
                 module.exports = require("child_process");
 
                 /***/
-}),
+            }),
 
 /***/ "path":
 /*!***********************!*\
@@ -3334,7 +3337,7 @@
                 module.exports = require("path");
 
                 /***/
-}),
+            }),
 
 /***/ "../package.json":
 /*!***********************!*\
@@ -3346,10 +3349,10 @@
                 module.exports = JSON.parse('{"name":"iobroker.yahka","version":"1.0.2","description":"ioBroker HomeKit Adapter","author":{"name":"Jens Weigele","email":"iobroker.yahka@gmail.com"},"contributors":[{"name":"Jens Weigele","email":"iobroker.yahka@gmail.com"}],"homepage":"https://github.com/jensweigele/ioBroker.yahka","license":"MIT","keywords":["ioBroker","iobroker.yahka","Smart Home","home automation","siri","homekit"],"repository":{"type":"git","url":"https://github.com/jensweigele/ioBroker.yahka"},"engines":{"node":">=12.0.0"},"dependencies":{"@iobroker/adapter-core":"^2.6.7","debug":"^4.3.4","dev-null":"^0.1.1","hap-nodejs":"^0.11.0","ip":"^1.1.8","macaddress":"0.5.3","util":"^0.12.5"},"devDependencies":{"@alcalzone/release-script":"^3.5.9","@alcalzone/release-script-plugin-iobroker":"^3.5.9","@alcalzone/release-script-plugin-license":"^3.5.9","@types/iobroker":"^4.0.5","@types/jquery":"^3.5.16","@types/node":"^18.15.6","assert":"^2.0.0","chai":"^4.3.7","crypto-browserify":"^3.12.0","gulp":"^4.0.2","html-webpack-plugin":"^5.5.0","mocha":"^10.2.0","path-browserify":"^1.0.1","process":"^0.11.10","raw-loader":"^4.0.2","stream-browserify":"^3.0.0","timers":"^0.1.1","ts-loader":"^9.4.2","typescript":"^5.0.2","webpack":"^5.76.3","webpack-cli":"^5.0.1","webpack-node-externals":"^3.0.0","xml2js":"^0.4.23"},"bugs":{"url":"https://github.com/jensweigele/ioBroker.yahka/issues"},"readmeFilename":"README.md","main":"main.js","files":["admin/","main.js","LICENSE","README.md","io-package.json","hap-nodejs-community-types/"],"scripts":{"test":"node node_modules/mocha/bin/mocha --exit","build":"gulp","prepublishOnly":"gulp","release":"release-script","release-patch":"release-script patch --yes","release-minor":"release-script minor --yes","release-major":"release-script major --yes"}}');
 
                 /***/
-})
+            })
 
         /******/
-});
+    });
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
@@ -3361,14 +3364,14 @@
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
             /******/
-}
+        }
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
 /******/ 			id: moduleId,
 /******/ 			loaded: false,
 /******/ 			exports: {}
             /******/
-};
+        };
 /******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
@@ -3379,7 +3382,7 @@
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
         /******/
-}
+    }
 /******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/node module decorator */
@@ -3389,9 +3392,9 @@
 /******/ 			if (!module.children) module.children = [];
 /******/ 			return module;
             /******/
-};
+        };
         /******/
-})();
+    })();
 /******/
 /************************************************************************/
 /******/

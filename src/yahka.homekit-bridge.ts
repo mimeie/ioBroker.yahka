@@ -26,7 +26,7 @@ export class THomeKitBridge {
             () => {
                 let advertiser = this.config.useLegacyAdvertiser ? MDNSAdvertiser.BONJOUR : MDNSAdvertiser.AVAHI;
                 advertiser = this.config.useCiaoAdvertiser ? MDNSAdvertiser.CIAO : advertiser;
-                this.FLogger.info(`publishing bridge ${this.config.name} on ${this.config.interface ?? '0.0.0.0'} using ${advertiser}`);
+                this.FLogger.info(`mei-debug publishing bridge ${this.config.name} on ${this.config.interface ?? '0.0.0.0'} using ${advertiser}`);
                 this.bridgeObject.publish({
                     username: this.config.username,
                     port: this.config.port,
