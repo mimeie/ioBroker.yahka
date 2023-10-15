@@ -2165,7 +2165,9 @@
                         // save level if we are switching off
                         if (stateName === this.parameters.levelState) {
                             const cacheValue = this.readValueFromCache(stateName);
-                            if (parseFloat(cacheValue.val) > 0) {
+                            this.log.info(`mei-debug vor cacheValue`);
+                            if (cacheValue && parseFloat(cacheValue.val) > 0) {
+                                this.log.info(`mei-debug vor cacheValue gueltig`);
                                 this.lastOnLevel = cacheValue;
                             }
                         }
