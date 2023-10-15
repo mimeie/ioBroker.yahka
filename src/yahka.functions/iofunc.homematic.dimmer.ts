@@ -32,6 +32,12 @@ export class TIoBrokerInOutFunction_Homematic_Dimmer_Base extends TIoBrokerInOut
     }
 
     protected cacheChanged(stateName: string, callback: IInOutChangeNotify) {
+
+        this.log.info(`cacheChanged [${stateName}]`);
+
+        //const newValue = plainIoValue;
+        //this.log.info(`cacheChanged [${stateName}]: ${JSON.stringify(newValue)}`);
+
         // save level if we are switching off
         if (stateName === this.parameters.levelState) {
             const cacheValue = this.readValueFromCache(stateName);
