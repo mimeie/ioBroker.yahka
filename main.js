@@ -2161,13 +2161,13 @@
                     }
                     cacheChanged(stateName, callback) {
 
-                        this.log.info(`mei-debug cacheChanged main.js [${stateName}]`);
+                        this.log.debug(`mei-debug cacheChanged main.js [${stateName}]`);
                         // save level if we are switching off
                         if (stateName === this.parameters.levelState) {
                             const cacheValue = this.readValueFromCache(stateName);
-                            this.log.info(`mei-debug vor cacheValue`);
+                            this.log.debug(`mei-debug vor cacheValue`);
                             if (cacheValue && parseFloat(cacheValue.val) > 0) {
-                                this.log.info(`mei-debug vor cacheValue gueltig`);
+                                this.log.debug(`mei-debug vor cacheValue gueltig`);
                                 this.lastOnLevel = cacheValue;
                             }
                         }
